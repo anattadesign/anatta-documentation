@@ -80,6 +80,9 @@ module.exports = {
           children: [
             '',
             'prismic-integration',
+            'getting-started',
+            'custom-types',
+            'slices',
           ]
         }
       ],
