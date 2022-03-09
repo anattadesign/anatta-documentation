@@ -37,6 +37,7 @@ module.exports = {
     nav: [
       {
         text: 'Prismic',
+        link: '/prismic/',
         items: [
           {
             text: 'Prismic',
@@ -64,7 +65,7 @@ module.exports = {
           collapsable: false,
           children: [
             '',
-            'what-is-prismic',
+            'features',
           ]
         }
       ],
@@ -74,7 +75,9 @@ module.exports = {
           collapsable: false,
           children: [
             '',
-            'what-is-prismic-adapter',
+            'supported-types',
+            'prismic-preview',
+            'under-the-hood',
           ]
         }
       ],
