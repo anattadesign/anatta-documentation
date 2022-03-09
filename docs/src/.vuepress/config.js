@@ -4,7 +4,7 @@ module.exports = {
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#title
    */
-  title: 'Anatta Documentation',
+  title: 'Anatta Documentation 💯',
   base: '/prismic-adaptor-integration/',
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#description
@@ -19,7 +19,7 @@ module.exports = {
   head: [
     ['meta', { name: 'theme-color', content: '#ff322e' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
-    ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }]
+    ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
   ],
 
   /**
@@ -28,7 +28,7 @@ module.exports = {
    * ref：https://v1.vuepress.vuejs.org/theme/default-theme-config.html
    */
   themeConfig: {
-    logo: '/prismic-logo.jpeg',
+    logo: '/favicon.ico',
     repo: 'https://github.com/anattadesign/prismic-adaptor-integration',
     editLinks: false,
     docsDir: 'docs',
@@ -37,19 +37,24 @@ module.exports = {
     nav: [
       {
         text: 'Prismic',
-        link: '/prismic/',
+        items: [
+          {
+            text: 'Prismic',
+            link: '/prismic/',
+          },
+          {
+            text: 'Prismic Adapter',
+            link: '/prismic-adapter/',
+          },
+          {
+            text: 'Prismic Integration',
+            link: '/prismic-integration/',
+          }
+        ]
       },
       {
-        text: 'Prismic Adapter',
-        link: '/prismic-adapter/',
-      },
-      {
-        text: 'Prismic Integration',
-        link: '/prismic-integration/',
-      },
-      {
-        text: 'Config',
-        link: '/config/'
+        text: 'Markdown',
+        link: '/markdown-demo/'
       }
     ],
     sidebar: {
