@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: 	/prismic-io.png
+heroImage: 	/favicon.ico
 tagline: Anatta Knowledge sharing documentation
 actionText: Quick Start →
 actionLink: /prismic/
