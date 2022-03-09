@@ -4,7 +4,7 @@ module.exports = {
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#title
    */
-  title: 'Prismic Documentation',
+  title: 'Anatta Documentation',
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#description
    */
@@ -79,6 +79,9 @@ module.exports = {
           children: [
             '',
             'prismic-integration',
+            'getting-started',
+            'custom-types',
+            'slices',
           ]
         }
       ],
