@@ -37,15 +37,20 @@ module.exports = {
     nav: [
       {
         text: 'Prismic',
-        link: '/prismic/',
-      },
-      {
-        text: 'Prismic Adapter',
-        link: '/prismic-adapter/',
-      },
-      {
-        text: 'Prismic Integration',
-        link: '/prismic-integration/',
+        items: [
+          {
+            text: 'Prismic',
+            link: '/prismic/',
+          },
+          {
+            text: 'Prismic Adapter',
+            link: '/prismic-adapter/',
+          },
+          {
+            text: 'Prismic Integration',
+            link: '/prismic-integration/',
+          }
+        ]
       },
       {
         text: 'Markdown',
