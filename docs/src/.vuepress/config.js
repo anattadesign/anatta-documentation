@@ -54,6 +54,10 @@ module.exports = {
         ]
       },
       {
+        text: 'Design Token',
+        link: '/design-tokens/',
+      },
+      {
         text: 'Markdown',
         link: '/markdown-demo/'
       }
@@ -91,6 +95,15 @@ module.exports = {
             'getting-started',
             'custom-types',
             'slices',
+          ]
+        }
+      ],
+      '/design-tokens/': [
+        {
+          title: 'Design Tokens',
+          collapsable: false,
+          children: [
+            ''
           ]
         }
       ],
