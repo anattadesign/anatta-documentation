@@ -1,7 +1,7 @@
 ---
 home: true
 heroImage: 	/prismic-io.png
-tagline: Knowledge sharing documentation for Prismic and Prismic Adapter
+tagline: Anatta Knowledge sharing documentation
 actionText: Quick Start →
 actionLink: /prismic/
 features:

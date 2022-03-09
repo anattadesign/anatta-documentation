@@ -4,7 +4,7 @@ module.exports = {
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#title
    */
-  title: 'Anatta Prismic Documentation',
+  title: 'Anatta Documentation',
   base: '/prismic-adaptor-integration/',
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#description
