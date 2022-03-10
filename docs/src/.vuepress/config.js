@@ -58,8 +58,8 @@ module.exports = {
         link: '/design-tokens/',
       },
       {
-        text: 'Markdown',
-        link: '/markdown-demo/'
+        text: 'Developer Guide',
+        link: '/developer-guide/'
       }
     ],
     sidebar: {
@@ -104,6 +104,17 @@ module.exports = {
           collapsable: false,
           children: [
             ''
+          ]
+        }
+      ],
+      '/developer-guide/': [
+        {
+          title: 'Developer Guide',
+          collapsable: false,
+          children: [
+            '',
+            'markdown',
+            'development-guide'
           ]
         }
       ],
