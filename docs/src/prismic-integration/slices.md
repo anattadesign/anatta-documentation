@@ -1,5 +1,5 @@
 # Slices
-Slices are the  reusable components that are built within the custom types using predefined elements(placeholders). 
+Slices are the  reusable components that are built within the custom types using predefined elements(fieldss). 
 Slices have scope within the parent custom type but it can be shared with other defined custom types.
 and yes, each custom type will have its own instance of slice even if it is shared.
 
@@ -77,64 +77,90 @@ If it’s successfully created, then you should see something like this.
 :::
 <div class="block-space"></div>
 
-## Customize Slices
+## Slice Zones
 
 <div class="block-space"></div>
 
-* **Step 1**:  
-**Click on the freshly created custom type.**
+*  **Understanding the different zones**  
 
-<img src='../public/select-custom-types.png' />
+Once you click on your newly created slice, you should see something like this.
 
 <div class="block-space"></div>
 
------
+<img src='../public/slice-zone-type.png' />
 
-* **Step 2**:  
-**Required Placeholders**
+<div class="block-space"></div>
 
-Each Custom type requires the following attribute to work with shopify. 
-Since prismic is not natively supported, we workaround with prismic by saving all the prismic data into metafields. 
+## **Build Zone**
+This is the place where you would define fields for your components.
+There are two different types of zone: 
 
-:::danger Important
- There are few keys that need to be defined to make it work with our backend integration.Those keys are predefined and will be used for each and every custom type.
+::: tip Non-repeatable zone:   
+ Each element refer to the fields instead of the actual element,   
+This zone refers to the elements that don’t repeat.  
+If you are familiar with the shopify backend system,   
+This zone works similar to the section settings.  
 :::
 
-To add the field and define the key, simply drag the required pre-defined elements and place it in the prismic build section.
-
-<img src='../public/define-fields.png' />
+::: tip Repeatable zone:  
+This zone refers to the elements that might get repeated or need to repeat based on the requirement,
+If you are familiar with the shopify backend system,
+This zone works similar to block settings.
+:::
 
 <div class="block-space"></div>
 
 -----
 
-* **Step 3**:  
-**Define Required Placeholders**
+## **Element Zone**
+This zone contains the list of pre-defined or supported fields.   
+Each type of field defines the type of data it supports.  
 
-Following are the required fields that needs to be defined on each of the custom types. 
+## Add fields
 
-|      Element  Name    |        Field Name    |     API ID*            |                            
+To add the fields into the component(slices), simply **drag a element from the element zone** and drop it to the **required build zone**.   
+
+:::warning 
+There are few values you need to fill up , before it successfully adds to the required zone.  
+
+ **Field name**:    
+  It acts as a title for our elements/fields while filling out the actual data in the document. So make sure to name it something that would be self describing.
+
+**API ID**:  
+ This acts as an unique identifier for our element. API ID  is generated based on the field name, but you can change the API ID manually. 
+:::
+
+<img src="../public/element-fields.png" />
+
+::: tip Note: 
+If you have worked with shopify metafields before,
+To fetch data from a metafield, We would require metafield **namespace** and **metafield key**
+While **slice name** acts as a **namespace in metafields**, **API ID** works as a **metafield key** to fetch the specific data of the element. 
+:::
+
+<div class="block-space"></div>
+
+-----
+
+
+## Add required field  
+
+Following are the required fields that needs to be defined on **Non Repeatable Zone** on each of the slices. 
+
+|      Element  Name    |        Field Name    |     API ID*           |                            
 | --------------------- | ---------------------| --------------------- |
-|           UID         |          Slug        | uid                   |
-|           Title       |          Title       | page_title            |
+|           Boolean     |          enable      |      enable           |
 
 
-:::tip Note
-Prismic works by creating a new page, and saving all the data as a metafields of that created page.
-
-In Shopify , to create a new page all we need is a page_handle(Slug)  and page title(Title) and that is what we are defining here. 
-
-Please note that we are only defining the template(structure) here, we will be filling out these values while creating the document. 
-
+:::tip 
+ We are checking value of this key to either show/hide the slices. So make sure, that its value is true if you want to render it in UI
 :::
 
 <div class="block-space"></div>
 
 -----
 
-* **Step 4**:  
-**Save the changes**
+Hit the save once you are done with adding up the fields based on the requirement.
+And you have successfully created a slice.
 
-If your custom types looks similar to this, after the required fields been defined. We can start creating our first **slice**. 
-
-<img src='../public/required-fields.png' />
+Lets move on to documents.

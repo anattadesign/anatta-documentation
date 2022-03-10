@@ -54,3 +54,13 @@ console.log('Hello, Anatta!')
 
 ## Text Linking
 [Prismic](http://localhost:8080/prismic-adaptor-integration/prismic/)
+
+## Horizontal break line
+
+----
+
+## Bold Text
+ ** text here **
+ (avoid space between text and **)
+
+
