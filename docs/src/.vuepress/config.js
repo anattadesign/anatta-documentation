@@ -37,6 +37,7 @@ module.exports = {
     nav: [
       {
         text: 'Prismic',
+        link: '/prismic/',
         items: [
           {
             text: 'Prismic',
@@ -53,8 +54,12 @@ module.exports = {
         ]
       },
       {
-        text: 'Markdown',
-        link: '/markdown-demo/'
+        text: 'Design Token',
+        link: '/design-tokens/',
+      },
+      {
+        text: 'Developer Guide',
+        link: '/developer-guide/'
       }
     ],
     sidebar: {
@@ -64,7 +69,7 @@ module.exports = {
           collapsable: false,
           children: [
             '',
-            'what-is-prismic',
+            'features',
           ]
         }
       ],
@@ -74,7 +79,9 @@ module.exports = {
           collapsable: false,
           children: [
             '',
-            'what-is-prismic-adapter',
+            'supported-types',
+            'prismic-preview',
+            'under-the-hood',
           ]
         }
       ],
@@ -89,6 +96,26 @@ module.exports = {
             'custom-types',
             'slices',
             'documents'
+          ]
+        }
+      ],
+      '/design-tokens/': [
+        {
+          title: 'Design Tokens',
+          collapsable: false,
+          children: [
+            ''
+          ]
+        }
+      ],
+      '/developer-guide/': [
+        {
+          title: 'Developer Guide',
+          collapsable: false,
+          children: [
+            '',
+            'markdown',
+            'development-guide'
           ]
         }
       ],

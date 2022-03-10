@@ -1,8 +1,13 @@
 # Introduction
-::: tip
-<b>Every website out there on the internet requires content to surface and showcase users, what it is about. </b>
+::: tip Universal
+<b>Every website out there on the internet requires content to surface and showcase it to users </b>
 :::
-Prismic is a source for handling the website content in a clean concept. So it is a CMS.
+
+Prismic is a CMS backend for your websites & apps - optimised for developer productivity with a visual builder to model page & post content. Api-based for technology freedom - use your favorite programming language & framework.
+
+- Get an API to fetch content.
+- Never worry about server maintenance.
+- Image optimization out-of-the-box.
 
 ## CMS (Content Management System)
 A content management system, often abbreviated as CMS, is software that helps users create, manage, and modify content on a website without the need for specialized technical knowledge.

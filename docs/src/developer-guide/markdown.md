@@ -1,8 +1,4 @@
----
-sidebar: auto
----
-
-# Markdown Uses :100:
+# Markdown Syntax :100:
 
 # Heading 1
 
