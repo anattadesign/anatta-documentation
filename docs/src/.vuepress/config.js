@@ -96,7 +96,9 @@ module.exports = {
             'getting-started',
             'custom-types',
             'slices',
-            'documents'
+            'documents',
+            'verify-integration',
+            'code-integration'
           ]
         }
       ],

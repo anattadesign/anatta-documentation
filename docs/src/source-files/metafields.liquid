@@ -1,0 +1,44 @@
+<!-- fetch metafields of page using page-handle -->
+{% assign metafields = pages.page_handle.metafields %}
+
+<!-- loop through priority meta_field_priority -->
+{% for priorities in metafields['meta_field_priority'] %}
+    <!--  loop though priorioty -->
+	{% for p in priorities %}
+		{%- assign snippet_names = '' -%}
+		<!-- loop through namespace or slice key-->
+		{% for module in p %}
+		   <!-- replace slice_name to slice-name -->
+			{% assign snippet_name = module | replace: '_', '-' %}
+			{%- assign enable = metafields[module].enable -%}
+			{%- assign min = 1200 -%}
+			{%- assign max = 2300 -%}
+			{%- assign diff = max | minus: min -%}
+			{%- assign random_id = "now" | date: "%N" | modulo: diff | plus: min -%}
+			{%- if module != 'priority' and enable == true -%}
+				{%- capture slice_data -%}
+					<!-- {{ snippet_name }} -->
+                    <!-- create new snippet with slice-name and render here-->
+					{% include snippet_name, id: random_id %}
+				{%- endcapture -%}
+				
+				<!--if same slice is imported twice, our metafields value will be set as slice-name-1 -->
+				{%- if slice_data contains 'Liquid error:' -%}
+					{%- assign allSlices = snippet_names | split: ',' -%}
+					<!--split the slice-name and check if it matches with any snippet-name,once matched it will render the snippet -->
+					{% for slice_name in allSlices %}
+						{% if snippet_name contains slice_name -%}
+							<!-- {{ snippet_name }} -->
+							{% include slice_name, id: random_id %}
+							{% break %}
+						{%- endif -%}
+					{%- endfor -%}
+				{%- else -%}
+					{%- assign snippet_names = snippet_names | append: snippet_name | append: ',' -%}
+					{{ slice_data }}
+				{%- endif -%}
+			{%- endif -%}
+
+		{% endfor %}
+	{% endfor %}
+{% endfor %}

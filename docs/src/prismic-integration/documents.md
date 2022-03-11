@@ -42,7 +42,9 @@ Refer to <a href="./custom-types" class="green-link">Custom Types</a>
 
 ## Import slices
 
-Import the slices that you want to use for the document(page) you are creating from the slices pool.
+Import the slices by clicking on the slice from the slice list that you want to use for the document(page) you are creating.  
+These slices works as an individual components that can be reused across the page.
+
 <img src='../public/slice-pool-document.png' />
 
 <div class="block-space"></div>
