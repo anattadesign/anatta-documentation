@@ -1,5 +1,6 @@
 # Development Guide
 
+[[toc]]
 # Directory structure Docs :book:
 
 ```
@@ -59,3 +60,4 @@
   }
 ],
 ```
+

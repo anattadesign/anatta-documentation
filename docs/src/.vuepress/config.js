@@ -1,11 +1,11 @@
-const { description } = require('../../package')
+const { description } = require("../../package");
 
 module.exports = {
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#title
    */
-  title: 'Anatta Documentation 💯',
-  base: '/prismic-adaptor-integration/',
+  title: "Anatta Documentation 💯",
+  base: "/prismic-adaptor-integration/",
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#description
    */
@@ -17,10 +17,19 @@ module.exports = {
    * ref：https://v1.vuepress.vuejs.org/config/#head
    */
   head: [
+<<<<<<< HEAD
     ['meta', { name: 'theme-color', content: '#ff322e' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
     ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
     ['link', { rel: 'icon', href: '/favicon.ico' }]
+=======
+    ["meta", { name: "theme-color", content: "#ff322e" }],
+    ["meta", { name: "apple-mobile-web-app-capable", content: "yes" }],
+    [
+      "meta",
+      { name: "apple-mobile-web-app-status-bar-style", content: "black" },
+    ],
+>>>>>>> 84c5a0e877712024061af9f04075bc876c07352b
   ],
 
   /**
@@ -29,66 +38,63 @@ module.exports = {
    * ref：https://v1.vuepress.vuejs.org/theme/default-theme-config.html
    */
   themeConfig: {
-    logo: '/favicon.ico',
-    repo: 'https://github.com/anattadesign/prismic-adaptor-integration',
+    logo: "/favicon.ico",
+    repo: "https://github.com/anattadesign/prismic-adaptor-integration",
     editLinks: false,
-    docsDir: 'docs',
-    editLinkText: '',
+    docsDir: "docs",
+    editLinkText: "",
     lastUpdated: false,
     nav: [
       {
-        text: 'Prismic',
-        link: '/prismic/',
+        text: "Prismic",
+        link: "/prismic/",
         items: [
           {
-            text: 'Prismic',
-            link: '/prismic/',
+            text: "Prismic",
+            link: "/prismic/",
           },
           {
-            text: 'Prismic Adapter',
-            link: '/prismic-adapter/',
+            text: "Prismic Adapter",
+            link: "/prismic-adapter/",
           },
           {
-            text: 'Prismic Integration',
-            link: '/prismic-integration/',
-          }
-        ]
+            text: "Prismic Integration",
+            link: "/prismic-integration/",
+          },
+        ],
       },
       {
-        text: 'Design Token',
-        link: '/design-tokens/',
+        text: "Design Token",
+        link: "/design-tokens/",
       },
       {
-        text: 'Developer Guide',
-        link: '/developer-guide/'
-      }
+        text: "Developer Guide",
+        link: "/developer-guide/",
+      },
     ],
     sidebar: {
-      '/prismic/': [
+      "/prismic/": [
         {
-          title: 'Prismic',
+          title: "Prismic",
+          collapsable: false,
+          children: ["", "features"],
+        },
+      ],
+      "/prismic-adapter/": [
+        {
+          title: "Prismic Adapter",
           collapsable: false,
           children: [
-            '',
-            'features',
-          ]
-        }
+            "",
+            "supported-types",
+            "prismic-preview",
+            "under-the-hood",
+          ],
+        },
       ],
-      '/prismic-adapter/': [
+      "/prismic-integration/": [
         {
-          title: 'Prismic Adapter',
-          collapsable: false,
-          children: [
-            '',
-            'supported-types',
-            'prismic-preview',
-            'under-the-hood',
-          ]
-        }
-      ],
-      '/prismic-integration/': [
-        {
-          title: 'Prismic Integration',
+          title: "Prismic Integration",
           collapsable: false,
           children: [
             '',
@@ -102,34 +108,25 @@ module.exports = {
           ]
         }
       ],
-      '/design-tokens/': [
+      "/design-tokens/": [
         {
-          title: 'Design Tokens',
+          title: "Design Tokens",
           collapsable: false,
-          children: [
-            ''
-          ]
-        }
+          children: [""],
+        },
       ],
-      '/developer-guide/': [
+      "/developer-guide/": [
         {
-          title: 'Developer Guide',
+          title: "Developer Guide",
           collapsable: false,
-          children: [
-            '',
-            'markdown',
-            'development-guide'
-          ]
-        }
+          children: ["", "markdown", "development-guide"],
+        },
       ],
-    }
+    },
   },
 
   /**
    * Apply plugins，ref：https://v1.vuepress.vuejs.org/zh/plugin/
    */
-  plugins: [
-    '@vuepress/plugin-back-to-top',
-    '@vuepress/plugin-medium-zoom',
-  ]
-}
+  plugins: ["@vuepress/plugin-back-to-top", "@vuepress/plugin-medium-zoom"],
+};
