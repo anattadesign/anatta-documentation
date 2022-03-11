@@ -1,7 +1,7 @@
 # Developer Guide
 
 ## Setup
-For setting up the project on your local machine, follow the instruction below
+For setting up the project on your local machine, follow the instructions below
 
 ## Github
 
@@ -22,7 +22,7 @@ Follow the below commands to setup and start local sever on your system
 :::
 
 ## Deployment
-To deploy the project on the Github pages move to the docs directory and run the following command
+To deploy the project on the Github pages move to the docs directory and run the following command.
 
     bash deploy.sh
 
