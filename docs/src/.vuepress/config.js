@@ -95,7 +95,7 @@ module.exports = {
             'slices',
             'documents',
             'verify-integration',
-            'code-integration'
+            'code-integration',
           ]
         }
       ],
