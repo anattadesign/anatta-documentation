@@ -9,7 +9,7 @@ Prismic adaptor provides us high-level information and the status of the ongoing
 metafields on existing pages.
 Also if there is any error, it'll give you a error message (most of the time there is nothing we can do).
 
-Learn more about  <a class="green-link" href="../prismic-adapter/readme.md">Prismic Adapter</a>
+Learn more about  <a class="green-link" href="../prismic-adapter/readme.html">Prismic Adapter</a>
 
 :::danger 
 You should have adapter credential at this point if not, ping backend dev who worked on integration part. 
