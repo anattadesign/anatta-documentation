@@ -1,5 +1,5 @@
 # Introduction
-Prismic is a CMS system, which makes use of various pre-build elements to create the reusable components called slices.
+Prismic is a CMS system, which makes use of various pre-build elements to create the reusable components called slices. Learn more about  <a class="green-link" href="/prismic-adaptor-integration/prismic">Prismic</a>
 
 ::: tip Quick Glance
 Each document(pages) has a pre-defined template known as **custom type**.
