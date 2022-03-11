@@ -13,15 +13,15 @@ If you have everything ready, lets begin the fun part.
 
 **Step 1**   
 Create a new custom type: 
-<a href="./custom-types.html" class="green-link" style="display: block;margin-top:-5px">Add a new custom types +</a>
+<a href="./custom-types.html#create-a-new-custom-types" class="green-link" style="display: block;margin-top:-5px">Add a new custom types +</a>
 
 **Step 2**    
 Create a new slice or import the existing one: 
-<a href="./slices.html" class="green-link" style="display: block;margin-top:-5px">Add/import slice +</a>
+<a href="./slices.html#create-a-new-slice" class="green-link" style="display: block;margin-top:-5px">Add/import slice +</a>
 
 **Step 3**   
 Create a new document: 
-<a href="./documents.html" class="green-link" style="display: block;margin-top:-5px">Add document +</a>
+<a href="./documents.html#create-a-new-document" class="green-link" style="display: block;margin-top:-5px">Add document +</a>
 
 **Step 4**  
 Code implementation: 

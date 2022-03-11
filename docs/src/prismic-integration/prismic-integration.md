@@ -7,13 +7,13 @@ All of these fun stuffs are taken care by backend.
 **Custom Types:**
 Each document(pages) created through prismic should have a template. Custom Types serve as the template for these documents.
 
-<a href="./custom-types.html" class="green-link" style="display: block;margin-top:-5px">Add a new custom type +</a>
+<a href="./custom-types.html#create-a-new-custom-types" class="green-link" style="display: block;margin-top:-5px">Add a new custom type +</a>
 
 
 **Slices:**
 Slices serves as a component. A component is a collection of elements/placeholder grouped together. It can be shared across the custom types.
 
-<a href="./slices.html" class="green-link" style="display: block;margin-top:-5px">Add a new slice +</a>
+<a href="./slices.html#create-a-new-slice" class="green-link" style="display: block;margin-top:-5px">Add a new slice +</a>
 
 
 **Elements:**

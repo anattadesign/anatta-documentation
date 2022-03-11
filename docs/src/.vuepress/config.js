@@ -17,10 +17,12 @@ module.exports = {
    * ref：https://v1.vuepress.vuejs.org/config/#head
    */
   head: [
+
     ['meta', { name: 'theme-color', content: '#ff322e' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
     ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
-    ['link', { rel: 'icon', href: '/favicon.ico' }]
+    ['link', { rel: 'icon', href: '/favicon.ico' }],
+    ["script",{src: "/scroll-fix.js", type: "text/javascript"}] 
   ],
 
   /**
@@ -121,3 +123,5 @@ module.exports = {
    */
   plugins: ["@vuepress/plugin-back-to-top", "@vuepress/plugin-medium-zoom"],
 };
+
+
