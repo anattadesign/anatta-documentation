@@ -19,7 +19,7 @@ Slices serves as a component. A component is a collection of elements/placeholde
 **Elements:**
 Elements acts as a placeholder. There are predefined elements that we can use to create data placeholders.
 
-<a href="custom-types.html" class="green-link" style="display: block;margin-top:-5px">Add a new placeholder +</a>
+<a href="./slices.html#element-zone" class="green-link" style="display: block;margin-top:-5px">Add a new placeholder +</a>
 
 :::warning Note
 We will be refering elements as placeholder

@@ -25,4 +25,4 @@ Create a new document:
 
 **Step 4**  
 Code implementation: 
-<a href="./slices.html" class="green-link" style="display: block;margin-top:-5px">Learn More</a>
+<a href="./code-integration.html" class="green-link" style="display: block;margin-top:-5px">Learn More</a>
