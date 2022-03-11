@@ -17,19 +17,10 @@ module.exports = {
    * ref：https://v1.vuepress.vuejs.org/config/#head
    */
   head: [
-<<<<<<< HEAD
     ['meta', { name: 'theme-color', content: '#ff322e' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
     ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
     ['link', { rel: 'icon', href: '/favicon.ico' }]
-=======
-    ["meta", { name: "theme-color", content: "#ff322e" }],
-    ["meta", { name: "apple-mobile-web-app-capable", content: "yes" }],
-    [
-      "meta",
-      { name: "apple-mobile-web-app-status-bar-style", content: "black" },
-    ],
->>>>>>> 84c5a0e877712024061af9f04075bc876c07352b
   ],
 
   /**
@@ -104,7 +95,7 @@ module.exports = {
             'slices',
             'documents',
             'verify-integration',
-            'code-integration'
+            'code-integration',
           ]
         }
       ],
