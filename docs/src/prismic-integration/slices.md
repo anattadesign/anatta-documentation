@@ -48,9 +48,6 @@ Make sure you have slice zone enabled
 
 <div class="block-space"></div>
 
-----
-
-* **Step 4**:  
 **Fill in slice name and description and select appropriate icon**
 
 :::warning

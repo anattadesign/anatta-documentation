@@ -45,6 +45,8 @@ Remember, these works as a template to create document(pages),
 However, generic names can be given to single-type custom types, as they will be only used once.
 :::
 
+<img src="../public/custom-type-name.png" />
+
 <div class="block-space"></div>
 
 
