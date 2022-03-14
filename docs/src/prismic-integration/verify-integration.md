@@ -42,7 +42,7 @@ find the row with the same title from **resource title** column in prismic adapt
 
 Check the status from , **sync status** column in prismic adapter.
 
-**Make sure its status is not error**. More about errors <a href="#common-errors" class="green-link">here</a>
+**Make sure its status is not error**. More about errors <a href="./common-adapter-errors.html" class="green-link">here</a>
 
 ::: warning
 Make sure that you refresh page in every 30s.
@@ -50,22 +50,10 @@ Make sure that you refresh page in every 30s.
 
 **Once your sync status is completed. Lets check on shopify.**
 
-:::tip
-If your **sync status** is completed, you can **avoid** <a href="#common-errors-and-easy-fixes" class="green-link">Common errors and easy fixes</a> 
-:::
-
-
 <div class="block-space"></div>
 
 ----
 
-## Common errors and easy fixes
-
-<div class="block-space"></div>
-  Coming soon
-<div class="block-space"></div>
-
-----
 
 ## Check for page metafields on shopify
 
@@ -101,6 +89,6 @@ Check here: <a href="#check-status" class="green-link">Check prismic publish sta
 :::
 <div class="block-space"></div>
 
-**After everything is verified, Now we can dive into <a href="#check-status" class="green-link">code integration.</a>**
+**After everything is verified, Now we can dive into <a href="./code-integration.html" class="green-link">code integration.</a>**
 
 

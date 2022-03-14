@@ -108,6 +108,6 @@ Please note that we are only defining the template(structure) here, we will be f
 * **Step 4**:  
 **Save the changes**
 
-If your custom types looks similar to this, after the required fields been defined. We can start creating our first **slice**. 
+If your custom types looks similar to this after the required fields been defined, We can start creating our first **slice**. 
 
 <img src='../public/required-fields.png' />
