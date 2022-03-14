@@ -5,20 +5,35 @@ For setting up the project on your local machine, follow the instructions below
 
 ## Github
 
-Get the codebase from Github Repository
+Get the codebase from **Github** Repository
 
-    git clone https://github.com/anattadesign/prismic-adaptor-integration.git
+    git clone https://github.com/anattadesign/anatta-documentation.git
 
 ## Local Setup
 
 Follow the below commands to setup and start local sever on your system
 
-- ```cd prismic-adaptor-integration/docs```
-- ```yarn```
-- ```yarn dev```
+<code-group>
+  <code-block title="YARN" style="color: red">
+  ```bash
+    cd prismic-adaptor-integration/docs 
+    yarn
+    yarn dev
+  ```
+  </code-block>
+
+  <code-block title="NPM">
+
+  ```bash
+    cd prismic-adaptor-integration/docs 
+    npm install
+    npm run dev
+  ```
+  </code-block>
+</code-group>
 
 ::: tip local server
-  Local server is now up and running and mostly accessible at [localhost](http://localhost:8080/prismic-adaptor-integration/)
+  Local server is now up and running and mostly accessible at **[localhost](https://github.com/anattadesign/anatta-documentation)**
 :::
 
 ## Deployment
