@@ -70,6 +70,24 @@ console.log('Hello, Anatta!')
   </li>
 </ul>
 ```
+
+## Code Grouping
+<code-group>
+  <code-block title="YARN">
+  ```bash
+    yarn
+    yarn dev
+  ```
+  </code-block>
+
+  <code-block title="NPM">
+
+  ```bash
+    npm install
+    npm run dev
+  ```
+  </code-block>
+</code-group>
 ## Block with a backgrond
     Hello background block
 
