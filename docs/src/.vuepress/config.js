@@ -5,7 +5,7 @@ module.exports = {
    * Ref：https://v1.vuepress.vuejs.org/config/#title
    */
   title: "Anatta Documentation",
-  base: "/prismic-adaptor-integration/",
+  base: "/anatta-documentation/",
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#description
    */
@@ -32,7 +32,7 @@ module.exports = {
    */
   themeConfig: {
     logo: "/favicon.ico",
-    repo: "https://github.com/anattadesign/prismic-adaptor-integration",
+    repo: "https://github.com/anattadesign/anatta-documentation",
     editLinks: false,
     docsDir: "docs",
     editLinkText: "",

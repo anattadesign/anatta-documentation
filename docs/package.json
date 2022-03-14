@@ -7,7 +7,7 @@
     "name": "Unscripter",
     "email": "amit@anattadesign.com"
   },
-  "repository": "https://github.com/anattadesign/prismic-adaptor-integration.git",
+  "repository": "https://github.com/anattadesign/anatta-documentation.git",
   "scripts": {
     "dev": "vuepress dev src",
     "build": "vuepress build src"

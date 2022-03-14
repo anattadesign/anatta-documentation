@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-open https://anattadesign.github.io/prismic-adaptor-integration/
+open https://anattadesign.github.io/anatta-documentation/
 # abort on errors
 set -e
 
@@ -20,6 +20,6 @@ git commit -m 'deploy'
 # git push -f https://github.com/anattadesign/prismic-adaptor-integration.git master
 
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
-git push -f https://github.com/anattadesign/prismic-adaptor-integration.git master:gh-pages
+git push -f https://github.com/anattadesign/anatta-documentation.git master:gh-pages
 # git push -f git@github.com:anattadesign/anatta-docs.git master:gh-pages
 cd -
