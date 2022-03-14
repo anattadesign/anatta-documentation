@@ -42,17 +42,12 @@ console.log('Hello, Anatta!')
 2. XYZ
 
 ## Text Linking
-[Prismic](http://localhost:8080/prismic-adaptor-integration/prismic/)
-
+[This is a link](http://localhost:8080/prismic-adaptor-integration/prismic/)
 ## Horizontal break line
-
-"----" 
-*without the double quotes
-
+#### Line Break
+----
 ## Bold Text
- ** text here **
- (avoid space between text and **)
-
+ **Bold Text**
 ## Add Language based code
 ``` js
   function helloJs() {
@@ -70,7 +65,6 @@ console.log('Hello, Anatta!')
   </li>
 </ul>
 ```
-
 ## Code Grouping
 <code-group>
   <code-block title="YARN">
@@ -88,9 +82,9 @@ console.log('Hello, Anatta!')
   ```
   </code-block>
 </code-group>
+
 ## Block with a backgrond
     Hello background block
-
 ## Import Code Snippets
 
 <SourceCode>
