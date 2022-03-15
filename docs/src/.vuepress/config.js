@@ -98,6 +98,9 @@ module.exports = {
             'documents',
             'verify-integration',
             'code-integration',
+            'working-with-built-in-elements',
+            'code-snippets',
+            'common-adapter-errors',
           ]
         }
       ],

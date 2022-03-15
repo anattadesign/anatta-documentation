@@ -5,7 +5,7 @@ and yes, each custom type will have its own instance of slice even if it is shar
 
 :::warning
 Make sure that you have filled all the required fields on custom types, before you start working on slices.
-<a href="./custom-types.html" class="green-link">
+<a href="./custom-types.html#customize-custom-types" class="green-link">
 Refer to custom types
 </a>
 :::

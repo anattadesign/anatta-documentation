@@ -103,7 +103,7 @@ snippets/test-slice.liquid
 
 ## Get metafields namespace and key for the created snippets
 
-The created snippets have access to the 'namespace' called module.
+The created snippets have access to the 'namespace' called **module**.
 
 Fetch all the metafields belonging to that namespace using,
 
@@ -111,13 +111,13 @@ Fetch all the metafields belonging to that namespace using,
 ```
 snippets/test-slice.liquid
 
-<!-- fetch metafields based on namespace(slice_test) -->
+<!-- fetch metafields based on namespace aka slice_test -->
 {% assign section = metafields[module] %} 
 ```
 
 :::tip
-Each **slice name** on **prismic** works as a **metafield namespace** and a **snippet name**,  
-And each **placeholder** in slice acts as a **metafields key**.
+ Instead of calling the actual namespace 'slice_test' , we can use **module** variable which have the namespace based on which this snippet is called.
+ Refer to <a href="#create-a-template">Create a template</a>
 :::
 
 Fetch the metafield key by going to the prismic dashboard / custom types / slice ,

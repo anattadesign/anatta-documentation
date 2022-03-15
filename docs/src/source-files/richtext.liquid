@@ -1,0 +1,39 @@
+
+ {% for block_text in rich_text %}
+     {% assign type= block_text['type'] %}
+     {% assign spans = block_text['spans'] %}
+     {% assign text = block_text['text'] %}
+     {% if spans.size > 0 %}
+     {% for span in spans %}
+       {% assign span_type = span['type'] %}
+       {% assign span_start = span['start'] %}
+       {% assign span_end  = span['end'] %}
+       {% assign textSize = text | size  %}
+       {% assign firstText =  text | slice: 0, span_start %}
+       {% assign secondText = text | slice: span_start, span_end %}
+       {% assign thirdText = text | slice: span_end, textSize %}
+       {% if span_type == 'strong' %}
+        {% capture secondText %} <span class='bold'>{{secondText}}</span> {% endcapture %}
+       {% endif %}
+       {% if span_type == 'em' %}
+         {% capture secondText %} <span class='italic'>{{secondText}}</span> {% endcapture %}
+       {% endif %}
+       {% if span_type == 'hyperlink' %}
+       {% capture secondText %} <span class='link'>{{secondText}}</span> {% endcapture %}
+       {% endif %}
+       {% assign text = firstText | append: secondText | append : thirdText %}
+     {% endfor %}
+     {% endif %}
+     {% assign textClass = '' %}
+     {% case type %}
+       {% when 'paragraph' %}
+       {% assign textClass = 'richtext__text' %}
+       {% when 'heading1' %}
+       {% assign textClass = 'richtext__title' %}
+       {% when 'heading4' %}
+        {% assign textClass = 'richtext__preheader' %}
+       {% else %}
+         {% assign textClass = '' %}
+     {% endcase %}
+    <span class="{{textClass}}">{{text}}</span>
+ {% endfor %}

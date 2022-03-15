@@ -1,0 +1,170 @@
+
+{%- assign image_widths_array = "100,116,134,156,182,210,244,282,328,380,442,512,594,688,798,926,1074,1246,1446,1678,1946,2258,2618,3038" | split: ',' %}
+ 
+
+{%- unless imageId -%}		
+	{%- assign min = 100 %}
+	{%- assign max = 10000 %}
+	{%- assign diff = max | minus: min %}
+	{%- assign imageId = "now" | date: "%N" | modulo: diff | plus: min %}
+{%- endunless -%}
+
+{%- if width -%}
+	{%- assign imageWidth = width -%}
+{%- endif -%}
+
+{% if prismic %}
+	{%- assign src = imageData.url %}
+	{%- unless imageWidth -%}
+	{%- assign imageWidth = imageData.dimensions.width %}
+	{%- endunless -%}
+	{%- assign imageHeight = imageData.dimensions.height %}
+	{%- assign widthParam = "&w=" %}
+	{%- assign initialSrc = src | append: '&w=10' %}
+	{%- assign alt = imageData.alt %}
+{% else %}
+	{%- assign src = imageData | img_url: "master" %}
+	{%- unless imageWidth -%}
+	{%- assign imageWidth = imageData.width %}
+	{%- endunless -%}
+	{%- assign imageHeight = imageData.height %}
+	{%- assign widthParam = "&width=" %}
+	{%- assign initialSrc = imageData | img_url: '10x10' %}
+	{%- assign alt = imageData.alt %}
+{% endif %}
+
+{%- if src contains '.svg' -%}
+	{%- assign isSVG = true -%}
+{%- else -%}
+	{%- assign isSVG = false -%}
+{%- endif -%}
+
+{%- if isSVG -%}
+	{%- assign initialSrc = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' %}
+{%- endif -%}
+
+{%- capture image_widths_array -%}
+  {%- for width in image_widths_array -%}
+    {%- comment -%} Check if image width is less or equal to width {%- endcomment -%}
+    {%- assign width_num = width | plus: 0 | round -%}
+    {%- if imageWidth >= width_num -%}{{ src | append: widthParam | append: width_num | append: " " | append: width_num | append: "w"}},{%- endif -%}
+  {%- endfor -%}
+  {{ src | append: widthParam | append: imageWidth | append: " " | append: imageWidth | append: "w"}}
+{%- endcapture -%}
+{%- assign image_widths_array = image_widths_array | strip -%}
+{%- assign iwidth = imageWidth | times: 1.0 %}
+
+{%- if aspectRatio -%}
+	{%- assign aspect_ratio = aspectRatio -%}
+{%- else -%}
+	{%- assign aspect_ratio = imageHeight | divided_by: iwidth -%}
+{%- endif -%}
+
+{%- if imageWidth > imageHeight -%}
+	{%- assign mode = 'image--landscape' -%}
+{%- elsif imageHeight > imageWidth -%}
+	{%- assign mode = 'image--portrait' -%}
+{%- else -%}
+	{%- assign mode = 'image--square' -%}
+{%- endif -%}
+
+<picture id="image{{imageId}}" class="image {{class}} {{mode}}" style="--maxw: {{imageWidth}}px;--maxh: {{imageHeight}}px;--aspect-ratio:var(--ov-aspect-ratio, {{ aspect_ratio }});{%- if fit -%}--image-fit:{{fit}};{%- endif -%}" data-loaded="{%- if load -%}true{%- else -%}false{%- endif -%}" {%- if isSVG -%}data-svg="true"{%- endif -%}>
+	{%- unless isSVG -%}
+	<source 
+		data-srcset="{{ image_widths_array }}"
+		sizes="{{ sizes }}"
+		aria-hidden="true"
+		class="lazyload"
+	/>
+{%- endunless -%}
+
+	{%- if isSVG and load -%}
+		<img
+			class="image__elem"
+			src="{{ src }}"
+			alt="{{ alt }}" 
+		/>
+	{%- elsif isSVG -%}
+		<img
+			class="image__elem"
+			src="{{ initialSrc }}"
+			alt="{{ alt }}" 
+			data-src="{{ src }}"
+		/>
+	{%- else -%}
+		<img
+			class="image__elem"
+			src="{{ initialSrc }}"
+			alt="{{ alt }}"
+		/>
+	{%- endif -%}
+
+
+</picture>
+
+{%- unless noscript or load -%}
+
+<script>
+	{
+		{%- if globalObject -%}
+			const objectName = '{{ globalObject }}'
+			window[objectName] = {
+				width: {{imageWidth}},
+				height: {{imageHeight}}
+			};
+		{%- endif -%}
+		const lazyImages = window.lazyImages = window.lazyImages || []
+		const el = document.querySelector("#image{{imageId}}")
+		if(el && window.lazyImageFn) window.lazyImageFn(el);
+		else if(el) lazyImages.push(el)
+	}
+</script>
+{%- endunless -%}    
+{% else %}
+{%- assign mod_class = mod_class | default: blank -%}
+{%- assign mod_fit = mod_fit | default: 'cover' -%}
+{%- assign mod_text = mod_text | default: false -%}
+{%- assign mod_src = mod_src | default: false -%}
+{%- assign mod_srcset = mod_srcset | default: false -%}
+{%- assign mod_src_media = mod_src_media | default: false -%}
+{%- assign mod_transparent = mod_transparent | default: false -%}
+
+{%- capture mod_css -%}
+  img fit-{{ mod_fit }} {{ mod_class }}{% if mod_transparent %} is-transparent{% endif %}
+{%- endcapture -%}
+
+{%- capture mod_attr -%}
+  {%- if mod_text %}title="{{- mod_text | escape -}}" alt="{{- mod_text | escape -}}"{%- endif -%}
+{%- endcapture -%}
+
+<picture class="{{- mod_css | strip -}}">
+  <noscript>
+    <img
+      class="img__el is-fallback"
+      src="{{- mod_src -}}"
+      {{ mod_attr }}>
+  </noscript>
+
+  {%- if mod_src_media -%}
+    {{- mod_src_media -}}
+  {%- endif -%}
+
+  <img
+    class="img__el"
+    data-normal="{{- mod_src -}}"
+    {% if mod_retina %}data-retina="{{- mod_retina -}}"{% endif %}
+    {% if mod_srcset %}data-srcset="{{- mod_srcset -}}"{% endif %} 
+    alt="{{- mod_text -}}" src="{{- mod_src -}}"
+    {{ mod_attr }}>
+</picture>
+
+{%- assign mod_class = nil -%}
+{%- assign mod_css = nil -%}
+{%- assign mod_attr = nil -%}
+{%- assign mod_fit = nil -%}
+{%- assign mod_text = nil -%}
+{%- assign mod_src = nil -%}
+{%- assign mod_srcset = nil -%}
+{%- assign mod_src_media = nil -%}
+{%- assign mod_transparent = nil -%}
+{%- assign mod_loader = nil -%}
