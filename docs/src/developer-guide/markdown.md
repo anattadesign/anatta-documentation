@@ -75,7 +75,6 @@ console.log('Hello, Anatta!')
   </code-block>
 
   <code-block title="NPM">
-
   ```bash
     npm install
     npm run dev

@@ -16,7 +16,7 @@ Follow the below commands to setup and start local sever on your system
 <code-group>
   <code-block title="YARN" style="color: red">
   ```bash
-    cd prismic-adaptor-integration/docs 
+    cd anatta-documentation/docs 
     yarn
     yarn dev
   ```
@@ -25,7 +25,7 @@ Follow the below commands to setup and start local sever on your system
   <code-block title="NPM">
 
   ```bash
-    cd prismic-adaptor-integration/docs 
+    cd anatta-documentation/docs 
     npm install
     npm run dev
   ```
