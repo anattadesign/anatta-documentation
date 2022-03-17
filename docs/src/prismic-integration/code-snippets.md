@@ -151,7 +151,8 @@ snippets > json-output-{namespace}.liquid
  }
  {% unless forloop.last %}
  ,
- {% endif %}
+ {% endunless %}
+ {% endfor %}
 ]
 ```
 
@@ -166,7 +167,9 @@ snippets > json-output-{namespace}.liquid
 templates > Collection.liquid
 
 <script>
+{
   "data": {% render "json-output-{namespace}" %}
+}
 </script>
 ```
 
