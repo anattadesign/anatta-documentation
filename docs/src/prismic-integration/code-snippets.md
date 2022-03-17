@@ -152,7 +152,7 @@ snippets > json-output-{namespace}.liquid
  {% unless forloop.last %}
  ,
  {% endunless %}
- {% endfor %}
+{% endfor %}
 ]
 ```
 
