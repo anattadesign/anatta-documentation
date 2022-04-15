@@ -33,10 +33,10 @@ module.exports = {
   themeConfig: {
     logo: "/favicon.ico",
     repo: "https://github.com/anattadesign/anatta-documentation",
-    editLinks: false,
-    docsDir: "docs",
-    editLinkText: "",
-    lastUpdated: false,
+    editLinks: true,
+    editLinkText: 'Help us improve this page!',
+    docsDir: "docs/src",
+    lastUpdated: true,
     nav: [
       {
         text: "Prismic",
