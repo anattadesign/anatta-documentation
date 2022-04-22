@@ -42,5 +42,5 @@ To deploy the project on the Github pages move to the docs directory and run the
     bash deploy.sh
 
 ::: warning
-  Github pages takes little time to publish changes
+  Github pages takes little time to publish changes and be visible
 :::
