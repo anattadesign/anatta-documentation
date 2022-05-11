@@ -108,7 +108,10 @@ module.exports = {
         {
           title: "Design Tokens",
           collapsable: false,
-          children: [""],
+          children: [
+            'animations',
+            'colors'
+          ],
         },
       ],
       "/developer-guide/": [
