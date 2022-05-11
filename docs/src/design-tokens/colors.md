@@ -4,6 +4,7 @@ Using this we can manage colors and palettes.Organize all colors into a single m
 
 ### Color Tokens
 
+<<<<<<< HEAD
 Here we establish the color palette and define all colors codes with standard token syntax, which are being used on project.
 
 ``` scss
@@ -68,3 +69,6 @@ You can also define your colors in smaller maps, and then add them to the global
   $button-colors
 );
 ```
+=======
+Here we establish the color palette and define all colors codes , which are being used on project.
+>>>>>>> 195ab62 (Finalised Animations and working on colors tokens)
