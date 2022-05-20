@@ -110,7 +110,8 @@ module.exports = {
           collapsable: false,
           children: [
             'animations',
-            'colors'
+            'colors',
+            'helper-mixins'
           ],
         },
       ],
