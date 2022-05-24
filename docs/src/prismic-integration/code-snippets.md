@@ -61,10 +61,21 @@ We are using <a href="https://www.npmjs.com/package/lazysizes">***lazysizes***</
 
 ----
 
+<SourceCode>
+<<< @/src/source-files/responsive-image.liquid
+</SourceCode>
+<div class="block-space"></div>
+
+----
+
+
 **Example**
 ```
-{% include 'lazyimage', imageData:section['placeholder_id'], prismic: true, fit: "fill", noscript: true, aspectRatio: aspectRatio %}
+{% render 'prismic-responsive-image', image: section.desktop_image, aspect_ratio: aspect_ratio %}
+
+{% comment %}Aspect ratio is optional here {% endcomment %}
 ```
+
 
 <div class="block-space"></div>
 
@@ -73,26 +84,13 @@ We are using <a href="https://www.npmjs.com/package/lazysizes">***lazysizes***</
 
 **Options Provided**
 
-**imageData**  
-This accepts object image file that prismic saves as a metafield.
-
-**prismic**
-If true, this will look for **url** key instead of **src** , because prismic image object consists image url in key of **url** instead of common key, **src**. 
-
-**fit**
-***Options***: 
-- "fit" : 
- This will crop the image, if image resolution is higher than container. 
- Image wont expand to fill the space, if  image resolution is lower than container.
-
-- "fill"
-  This will sqeeze the image , if image resolution is higher than container.
-  Image will expand to fill the container if image resolution is lower than the container.
+**image**  
+This accepts object image object that prismic saves as a metafield.
 
 **aspectRatio**  
-It defines the the **height/width** ratio of an image.   
-If value is **more than 1**, it means image have **more height than width**.  
-If **less than 1** , it means image have **more width than height.**  
+It defines the the **width/height** ratio of an image.   
+If value is **more than 1**, it means image have **more width than height**.  
+If **less than 1** , it means image have **more height than width.**  
 
 <div class="block-space"></div>
 
