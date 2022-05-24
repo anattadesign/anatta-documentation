@@ -1,3 +1,5 @@
+//lazy-images.liquid
+
 {%- assign lazy_image_url = image.url |  append: '&w={width}' -%}
 {%- assign default_image_url = image.url |  append: '&w=10' -%}
 {%- assign noscript_image_url = image.url |  append: '&w=2048' -%}
