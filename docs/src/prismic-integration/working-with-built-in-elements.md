@@ -29,32 +29,22 @@ Add the richtext with following options.
 <<< @/src/source-files/richtext.liquid
 </SourceCode>
 
+<div class="block-space"></div>
 
-Oh, wait. 
-
-**In order to add horizontal break space based on richtext editor format. You need to write few lines of css**
-
-<img src="../public/richtext-gap.png" />
-
-just add these css properties
-
+**Common Usage:**
+```
+<h1 class="section__heading">
+ {% include 'structured-text', content: section[richtext] %}
+</h1>
 ```
 
-.richtext__text {
-    line-height: 20px;
-    display: inline-block;
-}
-```
-
+<div class="block-space"></div>
 
 **Supported Feature:**
-
 - Bold
 - Italic 
 - Link
 - normal(paragraph)
-- heading1
-- heading 4
 
 <div class="block-space"></div>
 
