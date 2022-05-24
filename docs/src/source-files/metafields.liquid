@@ -18,11 +18,13 @@ templates/page.prismic-page.liquid
 			{%- assign max = 2300 -%}
 			{%- assign diff = max | minus: min -%}
 			{%- assign random_id = "now" | date: "%N" | modulo: diff | plus: min -%}
-			{%- if module != 'priority' and enable == true -%}
+			{%- if module != 'priority' -%}
 				{%- capture slice_data -%}
 					<!-- {{ snippet_name }} -->
                     <!-- create new snippet with slice-name and render here-->
-					{% include snippet_name, id: random_id %}
+					{% if enable == true%}
+					  {% include snippet_name, id: random_id %}
+					{% endif %%}
 				{%- endcapture -%}
 				
 				<!--if same slice is imported twice, our metafields value will be set as slice-name-1 -->
@@ -32,7 +34,9 @@ templates/page.prismic-page.liquid
 					{% for slice_name in allSlices %}
 						{% if snippet_name contains slice_name -%}
 							<!-- {{ snippet_name }} -->
-							{% include slice_name, id: random_id %}
+							{% if enable == true%}
+								{% include snippet_name, id: random_id %}
+							  {% endif %%}
 							{% break %}
 						{%- endif -%}
 					{%- endfor -%}
