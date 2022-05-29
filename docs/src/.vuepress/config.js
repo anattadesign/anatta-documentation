@@ -57,6 +57,10 @@ module.exports = {
         ],
       },
       {
+        text: "Shopify Shell",
+        link: "/shopify-shell/",
+      },
+      {
         text: "Design Token",
         link: "/design-tokens/",
       },
@@ -104,6 +108,42 @@ module.exports = {
           ]
         }
       ],
+      "/shopify-shell/": [
+        {
+          title: "Shopify Shell",
+          collapsable: false,
+          children: [
+            '',
+            'folder-structure',
+            'code-structure',
+            'features',
+            'commands',
+            'how-does-it-work'
+          ]
+        }
+      ],
+      "/vue-3/": [
+        {
+          title: "Shopify Shell - Vue 3",
+          collapsable: false,
+          children: [
+            '',
+            'required-packages',
+            'config-files'
+          ]
+        }
+      ],
+      "/vue-2/": [
+        {
+          title: "Shopify Shell - Vue 2",
+          collapsable: false,
+          children: [
+            '',
+            'required-packages',
+            'config-files'
+          ]
+        }
+      ],
       "/design-tokens/": [
         {
           title: "Design Tokens",
@@ -111,6 +151,7 @@ module.exports = {
           children: [""],
         },
       ],
+
       "/developer-guide/": [
         {
           title: "Developer Guide",
