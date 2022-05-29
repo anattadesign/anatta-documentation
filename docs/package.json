@@ -7,6 +7,9 @@
     "name": "Unscripter",
     "email": "amit@anattadesign.com"
   },
+  "contributors": [
+    "@jingleBaba"
+  ],
   "repository": "https://github.com/anattadesign/anatta-documentation.git",
   "scripts": {
     "dev": "vuepress dev src",
