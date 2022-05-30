@@ -44,7 +44,7 @@ All of the **liquid files and static content** are directly **copied to the fold
 
 ## How does it map with shopify ? 
 
-We use shopify snippet to load the layout and template bundled based on the current loaded template and layouts.
+We use shopify snippet to load the layout and template bundled js and css based on the  loaded template and layout.
 
 ```
 //theme.liquid
