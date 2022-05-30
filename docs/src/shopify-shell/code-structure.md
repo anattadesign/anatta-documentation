@@ -42,8 +42,12 @@ src/js/bundles/templates/collection.js
 
 If it doesn't exist, 
 
-create a new file called ***collection.js** in mentioned path ,
-and import the required dependencies scss like section's or snippet's scss or js.
+create a new file called ***collection.js** in mentioned path .
+
+
+## Step 2 : Import the required dependencies
+
+Import the required dependencies for the template either its 3rd party js or just section js that is included in the template.
 
 ```
 // {template_name}.js
@@ -83,7 +87,7 @@ async loadComponent = (componentName,callback = () => {return}) => {
 <div class="block-space"></div>
 
 
-## Step: 2 : Create dependency files
+## Step: 3 : Create dependency files
 
 Create scss and js if they dont exist that are required for the section that are included in that particular template or basically any files that are required
 to make this template work.
@@ -110,7 +114,7 @@ export default () => {
 <div class="block-space"></div>
 
 
-## Step: 3 : Confirm changes 
+## Step: 4 : Confirm changes 
 Make changes in scss or js files and see if they are reflected.
 
 
