@@ -30,7 +30,7 @@ src/js/bundles/layouts/**.js
 
 <div class="block-space"></div>
 
-## Step: 1 : Identify template 
+## Step: 1 : Identify template or layout
 
 Identify template that we are working on, in our case, collection.js.
 
@@ -50,7 +50,6 @@ and import the required dependencies scss like section's or snippet's scss or js
 //collection.js
 
 //js and css imports here
-@import '~Styles/sections/section-hello.scss;
 @import sectionHello from '../sections/section-hello';
 
 sectionHello();
@@ -64,7 +63,6 @@ or lazyload it,
 //collection.js
 
 //js and css imports here
-@import '~Styles/sections/section-hello.scss;
 
 async loadComponent = (componentName,callback = () => {return}) => {
    if(!componentName) {
@@ -76,7 +74,7 @@ async loadComponent = (componentName,callback = () => {return}) => {
 }
 
 //some event callback
-((...args) => {
+((args) => {
 //note that this is a async code, you might want to pass callback
  loadComponent('section-hello');
 });
@@ -102,7 +100,11 @@ h1 {
 ```
 /src/js/bundles/sections/section-hello.js
 
-console.log("hello");
+@import '~Styles/sections/section-hello.scss;
+
+export default () => {
+ console.log("hello");
+}
 
 ```
 <div class="block-space"></div>
