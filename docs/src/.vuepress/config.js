@@ -151,7 +151,8 @@ module.exports = {
           children: [
             'animations',
             'colors',
-            'helper-mixins'
+            'helper-mixins',
+            'typography'
           ],
         },
       ],
