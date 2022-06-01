@@ -26,7 +26,7 @@ Add the richtext with following options.
 <img src="../public/richtext-custom.png" />
 
 <SourceCode>
-<<< @/src/source-files/richtext.liquid
+<<< @/src/source-files/prismic-richtext.liquid
 </SourceCode>
 
 <div class="block-space"></div>
@@ -34,7 +34,7 @@ Add the richtext with following options.
 **Common Usage:**
 ```
 <h1 class="section__heading">
- {% include 'structured-text', content: section[richtext] %}
+ {% render 'prismic-rich-text' richtext: section.richtext %}
 </h1>
 ```
 
