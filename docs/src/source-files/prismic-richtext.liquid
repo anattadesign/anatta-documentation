@@ -49,7 +49,6 @@
         {%- assign formatted_text = text -%}
       {%- endif -%}
   
-      {% assign text_class = '' %}
       {% case block_type %}
           {% when 'paragraph' %}
               <p class="richtext__text">{{formatted_text}}</p>
@@ -76,8 +75,7 @@
           {% when 'image' %}
             <img src="{{block.url}}" alt="{{block.alt}}">
           {% else %}
-            {% assign text_class = '' %}
-            <span class="{{text_class}}">{{formatted_text}}</span>
+            <span>{{formatted_text}}</span>
       {% endcase %}
   {% endfor %}
 </div>
