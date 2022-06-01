@@ -1,5 +1,27 @@
 # Code Snippets
 
+## Rich Text Snippet
+
+**Full Code**
+
+<SourceCode>
+<<< @/src/source-files/prismic-richtext.liquid
+</SourceCode>
+<div class="block-space"></div>
+
+----
+
+**Example**
+
+```
+{% assign section = metafields[module] %}
+{% render 'prismic-richtext', richtext: section.richtext %}
+```
+
+<div class="block-space"></div>
+
+----
+
 ## Fetch content of a repeated-zone
 
 Fetching content through the repeated zone might get tricky. That's because, 
