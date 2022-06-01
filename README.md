@@ -15,4 +15,4 @@
 ## Deployment on the github pages
 - Move into docs folder
 - run ``` bash deploy.sh ```
-- visit [Anatta Documentation](https://anattadesign.github.io/prismic-adaptor-integration/)
+- visit [Anatta Documentation](https://anattadesign.github.io/anatta-documentation/)
