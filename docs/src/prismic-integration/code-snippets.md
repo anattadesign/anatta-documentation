@@ -44,6 +44,12 @@ Existing Lazyloading snippet might not work with prismic because of the cdn url 
 The CDN url for images provided by prismic offers fetching of images of different resolutions by using 
 ```&w``` suffix.
 
+So we have two approach here : 
+
+## Lazyload image With existing snippet(any)
+
+Follow this Procedure
+
 ::: danger 
 We are using <a href="https://www.npmjs.com/package/lazysizes">***lazysizes***</a> plugin for lazyloading images. So check **package.json** if its installed.
 :::
@@ -75,13 +81,6 @@ We are using <a href="https://www.npmjs.com/package/lazysizes">***lazysizes***</
 
 {% comment %}Aspect ratio is optional here {% endcomment %}
 ```
-
-
-<div class="block-space"></div>
-
-----
-
-
 **Options Provided**
 
 **image**  
@@ -91,6 +90,57 @@ This accepts object image object that prismic saves as a metafield.
 It defines the the **width/height** ratio of an image.   
 If value is **more than 1**, it means image have **more width than height**.  
 If **less than 1** , it means image have **more height than width.**  
+
+
+<div class="block-space"></div>
+
+----
+
+
+## Lazyload Images only for prismic
+
+
+**Full Code**
+
+<SourceCode>
+<<< @/src/source-files/lazy-image-standalone.liquid
+</SourceCode>
+<div class="block-space"></div>
+
+----
+
+**Example**
+```
+{% include 'lazyimage', imageData:section['placeholder_id'], prismic: true, fit: "fill", noscript: true, aspectRatio: aspectRatio %}
+```
+
+<div class="block-space"></div>
+
+----
+
+
+**Options Provided**
+
+**imageData**  
+This accepts object image file that prismic saves as a metafield.
+
+**prismic**
+If true, this will look for **url** key instead of **src** , because prismic image object consists image url in key of **url** instead of common key, **src**. 
+
+**fit**
+***Options***: 
+- "fit" : 
+ This will crop the image, if image resolution is higher than container. 
+ Image wont expand to fill the space, if  image resolution is lower than container.
+
+- "fill"
+  This will sqeeze the image , if image resolution is higher than container.
+  Image will expand to fill the container if image resolution is lower than the container.
+
+**aspectRatio**  
+It defines the the **height/width** ratio of an image.   
+If value is **more than 1**, it means image have **more height than width**.  
+If **less than 1** , it means image have **more width than height.**  
 
 <div class="block-space"></div>
 
