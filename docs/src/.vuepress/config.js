@@ -149,10 +149,11 @@ module.exports = {
           title: "Design Tokens",
           collapsable: false,
           children: [
-            'animations',
+            '',
+            'typography',
             'colors',
+            'animations',
             'helper-mixins',
-            'typography'
           ],
         },
       ],
