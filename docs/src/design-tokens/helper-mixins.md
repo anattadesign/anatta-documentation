@@ -45,3 +45,14 @@ So now you can use it like :
 ```
 
 Apart from padding, you can create your own custom mixins , which can be used frequenty across project like for margin, border, display flex, font styling etc.
+
+<div class="block-space"></div>
+
+----
+
+**Full Code for different mixins we use generally:**
+
+<SourceCode>
+<<< @/src/source-files/helper-mixins.scss
+</SourceCode>
+<div class="block-space"></div>
