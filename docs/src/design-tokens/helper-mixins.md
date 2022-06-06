@@ -2,9 +2,13 @@
 
 Basically helper mixins are the mixins we can use in design token to minimise the code and can be used just like user defined functions with some parameters.
 
-### Define a mixin
+## Define a mixin
 
 You can define/create your own mixin in helper-mixin file and use globally. Let us take example of a padding mixin and its usage to add padding on an element.
+
+## Padding
+
+Add padding to the element
 
 ``` scss
 @mixin padding($top: null, $right: null, $bottom: null, $left: null) {
@@ -15,40 +19,52 @@ You can define/create your own mixin in helper-mixin file and use globally. Let 
 }
 ```
 
-Usage:
+**Usage:**
 
 ``` scss
-.example{
-    @include padding(14px, 35px, null, 35px);
+.example {
+  @include padding(14px, 35px, null, 35px);
 }
 ```
 You can pass **null** incase you don;t need that parameter/css.
 
-We also use mixin to convert pixels to rem unit in our project, like this:
+<div class="block-space"></div>
+
+## Strip unit
 
 ``` scss
 @function stripUnit($value) {
   @return $value / ($value * 0 + 1);
 }
+```
 
+**Usage:**
+
+``` scss
+.example {
+  @include stripUnit(14px);
+}
+```
+
+<div class="block-space"></div>
+
+----
+
+## Px to rem
+
+``` scss
 @function rem($pxValue) {
   @return #{stripUnit($pxValue) / stripUnit(size("root"))}rem;
 }
 ```
 
-So now you can use it like :
+**Usage:**
 
 ``` scss
-.example{
-    @include padding(rem(14px), rem(35px), null, rem(35px));
+.example {
+  @include rem(14px);
 }
 ```
-
-Apart from padding, you can create your own custom mixins , which can be used frequenty across project like for margin, border, display flex, font styling etc.
-
-<div class="block-space"></div>
-
-----
 
 **Full Code for different mixins we use generally:**
 
