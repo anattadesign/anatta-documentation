@@ -26,9 +26,33 @@ Add padding to the element
   @include padding(14px, 35px, null, 35px);
 }
 ```
-You can pass **null** incase you don;t need that parameter/css.
+You can pass **null** incase you don't need that parameter/css.
 
 <div class="block-space"></div>
+
+----
+
+## Margin
+
+Add margin to element
+
+``` scss
+@mixin margin($top: null, $right: null, $bottom: null, $left: null) {
+  @include spacing($type: 'margin', $top: $top, $right: $right, $bottom: $bottom, $left: $left);
+}
+```
+
+**Usage:**
+
+``` scss
+.example {
+  @include margin(14px, 35px, null, 35px);
+}
+```
+
+<div class="block-space"></div>
+
+----
 
 ## Strip unit
 
@@ -66,9 +90,26 @@ You can pass **null** incase you don;t need that parameter/css.
 }
 ```
 
-**Full Code for different mixins we use generally:**
-
-<SourceCode>
-<<< @/src/source-files/helper-mixins.scss
-</SourceCode>
 <div class="block-space"></div>
+
+----
+
+## Position
+
+``` scss
+  @mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+  }
+```
+
+**Usage:**
+
+``` scss
+.example {
+  @include position('absolute',12px,0,10px,0);
+}
+```
