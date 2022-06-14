@@ -34,8 +34,12 @@ $fonts: (
 );
 ```
 
-### Typography Tokens
-Import one font at a time with font-face() or all your local webfonts with import-webfonts():
+<div class="block-space"></div>
+
+------
+
+
+**Import one font at a time with font-face() or all your local webfonts with import-webfonts():**
 
 ``` scss
  // Import one font by configuration key
@@ -45,8 +49,51 @@ Import one font at a time with font-face() or all your local webfonts with impor
  @include import-webfonts;
 ```
 
+<div class="block-space"></div>
 
-You can access them anywhere globally on your project.
+------
+
+**Include typography.scss file in design tokens's index file alongside other tokens:**
+
+```scss
+// THIS FILE IS IMPORTED IN EVERY COMPONENT as '@design'.
+// DO NOT INCLUDE CODE WHICH GENERATES CSS.
+
+/// Utility library which makes defining and accessing token very easy.
+/// @link https://www.oddbird.net/accoutrement/docs/
+@import '~accoutrement/sass/tools';
+
+$can-use-css-variables: false !default;
+
+// Basic Tokens
+@import 'colors';
+@import 'sizes';
+@import 'typography';
+@import 'layouts';
+@import 'animation';
+@import 'z-index';
+@import 'helper-mixins';
+```
+
+<div class="block-space"></div>
+
+------
+
+
+``` scss
+ // Import one font by configuration key
+ @include font-face('body');
+
+ // Import all local fonts
+ @include import-webfonts;
+```
+
+<div class="block-space"></div>
+
+------
+
+
+**Usage:**
 
 ``` scss
 html {
