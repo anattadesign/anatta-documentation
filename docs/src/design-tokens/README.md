@@ -15,7 +15,7 @@ All these design token files reside inside a design token folder in shopify shel
 │   ├── _helper-mixins.scss
 │   ├── _layouts.scss
 │   ├── _sizes.scss
-│   ├── _topography.scss
+│   ├── _typography.scss
 │   ├── _z-index.scss
 │   └── index.scss
 │ 
@@ -31,6 +31,8 @@ All these design token files reside inside a design token folder in shopify shel
 All these design token files are included in index.scss file in design token folder.
 
 ``` scss
+// src/design-tokens/index.scss
+
 @import '~accoutrement/sass/tools';
 
 // Configuration
@@ -52,7 +54,7 @@ $can-use-css-variables: false !default;
 As our design token setup/files are ready now you just need to import it in any of your scss files or scss components.
 
 ``` scss
-src/styles/templates/product.scss
+//src/styles/templates/product.scss
 
 // Design tokens
 @import "./src/design-tokens/index";

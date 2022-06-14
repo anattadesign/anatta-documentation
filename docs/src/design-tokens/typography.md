@@ -11,6 +11,9 @@ Using this we can manage all fonts and fonts face types into a single map, or se
 
 
 ``` scss
+
+// src/design-tokens/_typography.scss
+
 $font-path: '../fonts/';
 
 $fonts: (
@@ -38,6 +41,8 @@ $fonts: (
 Import one font at a time with font-face() or all your local webfonts with import-webfonts():
 
 ``` scss
+// src/styles/layouts/theme.scss
+
  // Import one font by configuration key
  @include font-face('body');
 
