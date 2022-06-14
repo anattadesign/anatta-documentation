@@ -106,4 +106,9 @@ Apart from padding, you can create your own custom mixins , which can be used fr
   @include position('absolute',12px,0,10px,0);
 }
 ```
+<<<<<<< HEAD
 >>>>>>> de12362 (Feature/design tokens (#5))
+=======
+
+<div class="block-space"></div>
+>>>>>>> 9e1cc7f (Added helper mixins examples and usage)
