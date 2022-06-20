@@ -40,8 +40,7 @@ $fonts: (
 ----
 
 ### Typography Tokens
-Import one font at a time with font-face() or all your local webfonts with import-webfonts():
-
+Import one font at a time with font-face() or all your local webfonts with import-webfonts()
 ``` scss
 // src/styles/components/global/typography.scss
 

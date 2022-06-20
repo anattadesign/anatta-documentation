@@ -52,7 +52,7 @@ $can-use-css-variables: false !default;
 As our design token setup/files are ready now you just need to import it in any of your scss files or scss components.
 
 ``` scss
-// src/styles/templates/product.scss
+src/styles/templates/product.scss
 
 // Design tokens
 @import "./src/design-tokens/index";

@@ -15,16 +15,11 @@ You can define/create your own mixin in helper-mixin file and use globally. Let 
 }
 ```
 
-Usage:
+**Usage:**
 
 ``` scss
-.example{
-<div class="block-space"></div>
-
-----
-
-## Margin
-Add margin to element
+.example {
+  @include padding(14px, 35px, null, 35px);
 
 ``` scss
 @mixin margin($top: null, $right: null, $bottom: null, $left: null) {
@@ -44,20 +39,22 @@ Add margin to element
 
 ----
 
-## Strip unit
-=======
 We also use mixin to convert pixels to rem unit in our project, like this:
 
 ``` scss
 @function stripUnit($value) {
   @return $value / ($value * 0 + 1);
 }
+=======
+## Px to rem
+
+``` scss
 @function rem($pxValue) {
   @return #{stripUnit($pxValue) / stripUnit(size("root"))}rem;
 }
 ```
 
-<<<<<<< HEAD
+
 **Usage:**
 
 ``` scss
@@ -65,6 +62,11 @@ We also use mixin to convert pixels to rem unit in our project, like this:
   @include rem(14px);
 }
 ```
+<div class="block-space"></div>
+
+----
+
+## Position
 
 <div class="block-space"></div>
 
@@ -72,12 +74,16 @@ We also use mixin to convert pixels to rem unit in our project, like this:
 
 ## Position
 
-<<<<<<< HEAD
-<SourceCode>
-<<< @/src/source-files/helper-mixins.scss
-</SourceCode>
-<div class="block-space"></div>
-=======
+``` scss
+  @mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+  }
+```
+
 So now you can use it like :
 
 ``` scss
@@ -87,8 +93,6 @@ So now you can use it like :
 ```
 
 Apart from padding, you can create your own custom mixins , which can be used frequenty across project like for margin, border, display flex, font styling etc.
->>>>>>> f01968f (Added colors and helper mixins to tokens)
-=======
 ``` scss
   @mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
     position: $position;
@@ -106,9 +110,3 @@ Apart from padding, you can create your own custom mixins , which can be used fr
   @include position('absolute',12px,0,10px,0);
 }
 ```
-<<<<<<< HEAD
->>>>>>> de12362 (Feature/design tokens (#5))
-=======
-
-<div class="block-space"></div>
->>>>>>> 9e1cc7f (Added helper mixins examples and usage)
