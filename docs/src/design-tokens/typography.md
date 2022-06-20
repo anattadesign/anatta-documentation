@@ -9,8 +9,9 @@ Using this we can manage all fonts and fonts face types into a single map, or se
 - Automate webfont imports from a CDN, or relative font files
 - Also includes helpers for accessibility and pseudo-elements.
 
-
 ``` scss
+// src/design-tokens/typography.scss
+
 $font-path: '../fonts/';
 
 $fonts: (
@@ -34,26 +35,31 @@ $fonts: (
 );
 ```
 
+<div class="block-space"></div>
+
+----
+
 ### Typography Tokens
 Import one font at a time with font-face() or all your local webfonts with import-webfonts():
 
 ``` scss
- // Import one font by configuration key
- @include font-face('body');
+// src/styles/components/global/typography.scss
 
- // Import all local fonts
- @include import-webfonts;
+// Import all local fonts
+@include import-webfonts;
 ```
 
+<div class="block-space"></div>
+
+----
 
 You can access them anywhere globally on your project.
-
+**Usage:**
 ``` scss
-html {
-  @include font-family('body');
-}
+// src/styles/templates/product.scss
 
-h1, h2, h3 {
+.product__title {
   @include font-family('heading');
 }
+
 ```

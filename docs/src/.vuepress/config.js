@@ -154,6 +154,8 @@ module.exports = {
             'colors',
             'animations',
             'helper-mixins',
+            'sizes',
+            'layouts',
           ],
         },
       ],
