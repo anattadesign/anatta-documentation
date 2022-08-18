@@ -47,12 +47,16 @@ module.exports = {
             link: "/prismic/",
           },
           {
-            text: "Prismic Adapter",
-            link: "/prismic-adapter/",
+            text: "Prismic 1.0",
+            link: "/Prismic-1.0/",
           },
           {
-            text: "Prismic Integration",
-            link: "/prismic-integration/",
+            text: "Prismic 2.0",
+            link: "/Prismic-2.0/",
+          },
+          {
+            text: "Common Terms and Code Snippets",
+            link: "/common-terms-and-code-snippets/",
           },
         ],
       },
@@ -89,22 +93,51 @@ module.exports = {
           ],
         },
       ],
-      "/prismic-integration/": [
+      "/prismic-1.0-integration/": [
         {
           title: "Prismic Integration",
           collapsable: false,
           children: [
             '',
-            'prismic-integration',
             'getting-started',
-            'custom-types',
-            'slices',
-            'documents',
             'verify-integration',
             'code-integration',
+            'common-adapter-errors',
+          ]
+        }
+      ],
+      "/prismic-1.0/": [
+        {
+          title: "Prismic 1.0",
+          collapsable: false
+        }
+      ],
+      "/prismic-2.0/": [
+        {
+          title: "Prismic 2.0",
+          collapsable: false
+        }
+      ],
+      "/prismic-2.0-integration/": [
+        {
+          title: "Prismic 2.0 Integration",
+          collapsable: false,
+          children: [
+            '',
+            'app-integration',
+            'code-integration',
+            'custom-types'
+          ]
+        }
+      ],
+      "/common-terms-and-code-snippets/": [
+        {
+          title: "Common Terms and Code Snippets",
+          collapsable: false,
+          children: [
+            '',
             'working-with-built-in-elements',
             'code-snippets',
-            'common-adapter-errors',
           ]
         }
       ],
@@ -171,7 +204,7 @@ module.exports = {
   /**
    * Apply plugins，ref：https://v1.vuepress.vuejs.org/zh/plugin/
    */
-  plugins: ["@vuepress/plugin-back-to-top", "@vuepress/plugin-medium-zoom"],
+  plugins: ["@vuepress/plugin-back-to-top", "@vuepress/plugin-medium-zoom", ['vuepress-plugin-code-copy', {align: 'top', color: '#fff'}]]
 };
 
 

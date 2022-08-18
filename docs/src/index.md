@@ -3,7 +3,7 @@ home: true
 heroImage: 	/favicon.ico
 tagline: Anatta Knowledge sharing documentation
 actionText: Quick Start →
-actionLink: /prismic-integration/
+actionLink: /Prismic-2.0/
 features:
 - title: Prismic Integration
   details: Make your website editable for the whole team
