@@ -11,4 +11,4 @@ In prismic 1.0 we make use of prismic adapter to sync the prismic page data into
 
 Check how to integrate using prismic adapter here: 
 
-<a class="green-link" href="/prismic-1.0-integration">Primic 1.0 Integration</a> 
+<a class="green-link" href="/anatta-documentation/prismic-1.0-integration">Primic 1.0 Integration</a> 

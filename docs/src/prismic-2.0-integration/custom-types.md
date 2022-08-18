@@ -1,7 +1,7 @@
 # Custom Types
 
 Custom types refers to the template for each of the document created in prismic, which contains the slices aka components. 
-<a class="green-link" href="/common-terms-and-code-snippets/custom-types.html">Learn more about custom types here </a>
+<a class="green-link" href="../common-terms-and-code-snippets/custom-types.html">Learn more about custom types here </a>
 
 
 ## Learn how to create custom types with JSON
