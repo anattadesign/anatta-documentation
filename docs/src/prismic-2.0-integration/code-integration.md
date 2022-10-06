@@ -3,7 +3,7 @@
 ## Render Prismic Slices
 
 <SourceCode>
-<<< @/src/source-files/prismic-richtext.liquid
+<<< @/src/source-files/render-slices.liquid
 </SourceCode>
 
 
