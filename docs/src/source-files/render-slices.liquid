@@ -1,0 +1,52 @@
+{%- assign metafields = metafields -%}
+{% comment %} *** Namespaces *** {% endcomment %}
+{% comment %} *** Controller *** {% endcomment %}
+{% assign theme_name = theme.name | downcase %}
+{% assign priority_key = 'LCB_priority' %}
+{% assign snippet_key = 'LCB' %}
+{% if theme_name contains 'preview' %}
+    {% assign priority_key = 'PCB_priority' %}
+    {% assign snippet_key = 'PCB' %}
+{% endif %}
+{%- assign snippet_names = '' -%}
+{% for priorities in metafields[priority_key] %}
+    {% assign custom_priorities = priority_list | default: priorities%}
+    {% for p in custom_priorities %}
+        {% for module in p %}
+            {% assign stripped_module = module | strip %}
+            {% assign snippet_name = stripped_module | replace: '_', '-' %}
+            {%- assign enable = metafields[stripped_module].enable -%}
+            {%- assign min = 1200 -%}
+            {%- assign max = 2300 -%}
+            {% assign section = metafields[stripped_module] %}
+            {%- assign diff = max | minus: min -%}
+            {%- assign random_id = 'now' | date: '%N' | modulo: diff | plus: min -%}
+            {% comment %} {{snippet_name}} {% endcomment %}
+            {%- if stripped_module != priority_key and stripped_module != 'priority' -%}
+                {%- capture slice_data -%}
+                    <!-- {{ snippet_name }} -->
+                    {% assign live_snippet = snippet_name | remove: snippet_key %}
+                    {% if enable %}
+                        {% include live_snippet, id: random_id, section: section %}
+                    {% endif %}
+                {%- endcapture -%}
+                {%- if slice_data contains 'Could not find asset snippets' -%}
+                    {%- assign allSlices = snippet_names | split: ',' -%}
+                    {% for slice_name in allSlices %}
+                        {% if snippet_name contains slice_name -%}
+                            <!-- {{ snippet_name }} -->
+                            {% assign live_snippet = slice_name | remove: snippet_key %}
+                            {% if enable %}
+                                {% include live_snippet, id: random_id , section:section  %}
+                            {% endif %}
+                            {% break %}
+                        {%- endif -%}
+                    {%- endfor -%}
+                {%- else -%}
+                    {%- assign snippet_names = snippet_names | append: snippet_name | append: ',' -%}
+                    {{ slice_data }}
+                {%- endif -%}
+            {%- endif -%}
+        {% endfor %}
+    {% endfor %}
+{% endfor %}

@@ -1,0 +1,21 @@
+{% assign theme_name = theme.name | downcase %}
+{% assign priority_key = 'LCB_priority' %}
+{% assign snippet_key = 'LCB' %}
+{% if theme_name contains 'preview' %}
+    {% assign priority_key = 'PCB_priority' %}
+    {% assign snippet_key = 'PCB' %}
+{% endif %}
+{% capture priority_list %}
+    {% for priorities in metafields[priority_key] %}
+        {% for slices in priorities %}
+            {% for slice in slices %}
+                {% if slice contains slice_key %}
+                    {{slice}}
+                    {% if forloop.last == false %},{% endif%}
+                {% endif %}
+            {% endfor %}
+        {%endfor%}
+    {% endfor %}
+{% endcapture %}
+{% assign priority_list_array = priority_list | strip_newlines | strip | split: ',' %}
+{% include 'render-slices', priority_list: priority_list_array, metafields: metafields %}

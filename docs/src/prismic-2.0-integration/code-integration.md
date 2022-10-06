@@ -2,60 +2,10 @@
 
 ## Render Prismic Slices
 
-```
-snippets/render-slices.liquid
+<SourceCode>
+<<< @/src/source-files/prismic-richtext.liquid
+</SourceCode>
 
-{% assign metafields = page.metafields %}
-{% comment %} *** Namespaces *** {% endcomment %}
-{% comment %} *** Controller *** {% endcomment %}
-{% assign theme_name = theme.name | downcase %}
-{% assign priority_key = 'LCB_priority' %}
-{% assign snippet_key = 'LCB' %}
-{% if theme_name contains 'preview' %}
-  {% assign priority_key = 'PCB_priority' %}
-  {% assign snippet_key = 'PCB' %}
-{% endif %}
-{% for priorities in metafields[priority_key] %}
-  {% for p in priorities %}
-    {%- assign snippet_names = '' -%}
-    {% for module in p %}
-      {% assign snippet_name = module | replace: '_', '-' %}
-      {%- assign enable = metafields[module].enable -%}
-      {%- assign min = 1200 -%}
-      {%- assign max = 2300 -%}
-      {%- assign diff = max | minus: min -%}
-      {%- assign random_id = "now" | date: "%N" | modulo: diff | plus: min -%}
-      {% comment %} {{snippet_name}} {% endcomment %}
-      {%- if module != priority_key and module != 'priority'-%}
-        {%- capture slice_data -%}
-          <!-- {{ snippet_name }} -->
-          {% assign live_snippet = snippet_name | remove: snippet_key %}
-          {% if enable %}
-            {% include live_snippet, id: random_id %}
-          {% endif %}
-        {%- endcapture -%}
-        {%- if slice_data contains 'Liquid error: Could not find asset snippets' -%}
-          {%- assign allSlices = snippet_names | split: ',' -%}
-          {% for slice_name in allSlices %}
-            {% if snippet_name contains slice_name -%}
-              <!-- {{ snippet_name }} -->
-              {% assign live_snippet = slice_name | remove: snippet_key %}
-              {% if enable %}
-                {% include live_snippet, id: random_id %}
-              {% endif %}
-              {% break %}
-            {%- endif -%}
-          {%- endfor -%}
-        {%- else -%}
-          {%- assign snippet_names = snippet_names | append: snippet_name | append: ',' -%}
-          {{ slice_data }}
-        {%- endif -%}
-      {%- endif -%}
-    {% endfor %}
-  {% endfor %}
-{% endfor %}
-
-```
 
 <div class="block-space"></div>
 
@@ -66,7 +16,8 @@ snippets/render-slices.liquid
 ```
 templates/prismic.page.liquid
 
-{% include 'render-slices' %}
+{% assign metafields = page.metafields %}
+{% include 'render-slices', metafields: metafields %}
 
 ```
 
@@ -74,52 +25,31 @@ templates/prismic.page.liquid
 
 ----
 
-## Render Single Slice from Global
+## Render Slice Limitation And Workaround
 
-```
-snippets/render-global-slice.liquid
 
-{% assign metafields = pages.global.metafields %}
-{% comment %} *** Namespaces *** {% endcomment %}
-{% comment %} *** Controller *** {% endcomment %}
-{% assign theme_name = theme.name | downcase %}
-{% assign priority_key = 'LCB_priority' %}
-{% assign snippet_key = 'LCB' %}
-{% if theme_name contains 'preview' %}
-  {% assign priority_key = 'PCB_priority' %}
-  {% assign snippet_key = 'PCB' %}
-{% endif %}
-{% assign snippet_names = '' %}
-{% assign module = snippet_name | replace: '-', '_' | prepend: snippet_key %}
-{%- assign enable = metafields[module].enable -%}
-{%- assign min = 1200 -%}
-{%- assign max = 2300 -%}
-{%- assign diff = max | minus: min -%}
-{%- assign random_id = "now" | date: "%N" | modulo: diff | plus: min -%}
-{% comment %} {{snippet_name}} {% endcomment %}
-{%- capture slice_data -%}
-    <!-- {{ snippet_name }} -->
-    {% if enable %}
-    {% include snippet_name, id: random_id %}
-    {% endif %}
-{%- endcapture -%}
-{%- if slice_data contains 'Liquid error: Could not find asset snippets' -%}
-    {%- assign allSlices = snippet_names | split: ',' -%}
-    {% for slice_name in allSlices %}
-    {% if snippet_name contains slice_name -%}
-        <!-- {{ snippet_name }} -->
-        {% if enable %}
-        {% include snippet_name, id: random_id  %}
-        {% endif %}
-        {% break %}
-    {%- endif -%}
-    {%- endfor -%}
-{%- else -%}
-    {%- assign snippet_names = snippet_names | append: snippet_name | append: ',' -%}
-    {{ slice_data }}
-{%- endif -%}
+Render slices snippet will load all the snippet based on the order , what if we want to load these snippet in different order or we want
+to fill some section that is not from prismic in between these section. 
 
-```
+That's the motivation for creating ```render-single-slice``` and ```render-excluding-slices``` snippet. 
+
+You can use ```render-slice-slice``` to render a particular slice from any page or collection or product metafield as long as you have access to that metafields. 
+
+And you can use ```render-excluding-slices```  to render all the slices except from the mentioned one. 
+
+Now the possibility is endless on how and where you can use these prismic slices or components.
+
+
+<div class="block-space"></div>
+
+----
+
+
+## Render Single Slice (Repeated instance supported)
+
+<SourceCode>
+<<< @/src/source-files/render-single-slice.liquid
+</SourceCode>
 
 **Example**
 
@@ -127,18 +57,56 @@ snippets/render-global-slice.liquid
 
 templates/collection.liquid 
 
-{% include 'global-render-slices' , snippet_name:'promo-bar'%}
+{% assign page_all_meta = pages['shop-all'].metafields %}
 
-{% comment %}
-    This look for the namespace promo_bar , in global page's metafields.   
-    So make sure that your global page's handle is "global" ,   
-    and the snippet name matches the namespace name 
-{% endcomment %}
+// use prismic slice name (handelized) as slice_key  
+
+{%- assign promo_landing_key = 'promo_bar_landing' -%}
+
+ {% include 'render-single-slice', slice_key: promo_landing_key , metafields: page_all_meta %}
+
+
+  // This look for the namespace promo_bar , in global page's metafields.   
+  // So make sure that your global page's handle is "global" ,   
+  // and the snippet name matches the namespace name 
 
 ```
 
 <div class="block-space"></div>
 
 ----
+
+## Render Excluding slices (render all slices except the mentioned one)
+
+<SourceCode>
+<<< @/src/source-files/render-excluding-slices.liquid
+</SourceCode>
+
+**Example**
+
+```
+
+templates/collection.liquid 
+
+{% assign page_all_meta = pages['shop-all'].metafields %}
+
+// use prismic slice name (handelized) as slice_key  
+
+{%- assign promo_landing_key = 'promo_bar_landing' -%}
+
+ {% include 'render-single-slice', slice_key: promo_landing_key , metafields: page_all_meta %}
+
+
+  // This look for the namespace promo_bar , in global page's metafields.   
+  // So make sure that your global page's handle is "global" ,   
+  // and the snippet name matches the namespace name 
+
+```
+
+<div class="block-space"></div>
+
+----
+
+
 
 
