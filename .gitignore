@@ -10,3 +10,6 @@ dist
 .basement
 config.local.js
 basement_dist
+.idea
+yarn.lock
+package-lock.json
